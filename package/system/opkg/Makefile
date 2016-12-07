@@ -114,6 +114,7 @@ define Package/opkg/Default/install
 	$(INSTALL_DATA) ./files/opkg$(2).conf $(1)/etc/opkg.conf
 	$(call FeedSourcesAppend,$(1)/etc/opkg.conf)
 	$(VERSION_SED) $(1)/etc/opkg.conf
+	echo "src/gz SHSProject http://opkg.baiyatech.com/repos/shs-project/ipks" >> $(1)/etc/opkg.conf
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/opkg-cl $(1)/bin/opkg
 endef
 
